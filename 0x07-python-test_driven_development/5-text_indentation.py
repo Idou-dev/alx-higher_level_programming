@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Module for adding 2 new lines after delim"""
+
+
 def text_indentation(text):
     """Method for adding 2 new lines after '.?:' chars.
 
@@ -16,6 +20,7 @@ def text_indentation(text):
             [line.strip(" ") for line in text.split(delim)])
 
     print(text, end="")
+
 
 if __name__ == "__main__":
     import doctest
