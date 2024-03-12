@@ -85,3 +85,23 @@ class Rectangle(Base):
                 type(self).__name__, self.id, self.__x,
                 self.__y, self.__width, self.__height
                 )
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
+
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """updes instance attributes via */**args"""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.__width = width
+        if height is not None:
+            self.__height = height
+        if x is not None:
+            self.__x = x
+        if y is not None:
+            self.__y = y
