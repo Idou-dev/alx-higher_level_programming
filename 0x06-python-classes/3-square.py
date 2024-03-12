@@ -26,4 +26,5 @@ class Square:
         Returns:
             the size squared
         """
-        return self.__size ** 2
+        size = self.__size
+        return size ** 2
