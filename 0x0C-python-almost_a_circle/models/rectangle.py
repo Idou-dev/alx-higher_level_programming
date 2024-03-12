@@ -74,10 +74,10 @@ class Rectangle(Base):
     def display(self):
         """prints in stdout the Rectangle instance
         with the character #"""
-        for i in range(self.height):
-            for j in range(self.width):
-                print("#", end='')
-            print()
+        s = "\n" * self.__y + (
+                " " * self.__x + "#" * self.__width + "\n"
+                ) * self.__height
+        print(s, end='')
 
     def __str__(self):
         """returns [Rectangle] (<id>) <x>/<y> - <width>/<height>"""
