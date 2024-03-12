@@ -37,19 +37,32 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         """width setter"""
+        self.validate_integer("width", width, False)
         self.__width = width
 
     @height.setter
     def height(self, height):
         """height setter"""
+        self.validate_integer("height", height, False)
         self.__height = height
 
     @x.setter
     def x(self, x):
         """x setter"""
+        self.validate_integer("x", x)
         self.__x = x
 
     @y.setter
     def y(self, y):
         """y setter"""
+        self.validate_integer("y", y)
         self.__y = y
+
+    def validate_integer(self, name, value, eq=True):
+        """validates integer methode"""
+        if type(value) is not int:
+            raise TypeError("{} must be an integer".format(name))
+        if not eq and value <= 0:
+            raise ValueError("{} must be > 0".format(name))
+        if eq and value < 0:
+            raise ValueError("{} must be >= 0")
