@@ -1,1 +1,0 @@
-sql mor queries
