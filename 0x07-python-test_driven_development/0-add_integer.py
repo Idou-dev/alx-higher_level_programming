@@ -5,6 +5,9 @@
 def add_integer(a, b=98):
     """
     adds two integers
+    Args:
+        a: first integer
+        b: second integer
     Raises:
         TypeError: if a or b are not float or int
     Return:
