@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """write_file method writes to a file"""
 
 
