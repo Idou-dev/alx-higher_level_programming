@@ -19,12 +19,7 @@ class Rectangle(BaseGeometry):
     """class Rectangle that inherits from BaseGeometry"""
     def __init__(self, width, height):
         """Instantiation with width and height"""
-        self.__width = width
-        self.__height = height
         self.integer_validator("width", width)
         self.integer_validator("height", height)
-
-
-if __name__ == '__main__':
-    import doctest
-    doctest.testfile('tests/7-base_geometry.txt')
+        self.__width = width
+        self.__height = height
