@@ -87,3 +87,23 @@ class Rectangle(Base):
                 "[Rectangle]" + " (" + str(self.id) + ") "
                 + str(self.__x) + "/" + str(self.__y) +
                 " - " + str(self.__width) + "/" + str(self.__height))
+
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """internat method that updates instance attribute */**args."""
+        if id is not None:
+            self.id = id
+        if width is not None:
+            self.width = width
+        if height is not None:
+            self.height = height
+        if y is not None:
+            self.y = y
+        if x is not None:
+            self.x = x
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
