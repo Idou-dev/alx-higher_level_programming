@@ -25,3 +25,27 @@ class Square(Rectangle):
         """setter function for size"""
         self.width = value
         self.height = value
+
+    def __update(self, id=None, size=None, x=None, y=None):
+        """internat method that updates instance attribute */**args."""
+        if id is not None:
+            self.id = id
+        if size is not None:
+            self.size = size
+        if y is not None:
+            self.y = y
+        if x is not None:
+            self.x = x
+
+    def update(self, *args, **kwargs):
+        """assigns an argument to each attribute"""
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
+
+    def to_dictionary(self):
+        """dictionary representation"""
+        return (
+                {"id": self.id, "size": self.size,
+                    "x": self.x, "y": self.y})
